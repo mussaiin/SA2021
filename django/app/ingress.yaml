@@ -1,0 +1,24 @@
+#apiVersion: networking.k8s.io/v1beta1
+#kind: Ingress
+#metadata:
+#  name: backend-ingress
+#  annotations:
+#    kubernetes.io/ingress.class: nginx
+#spec:
+#  rules:
+#  - host: sa.homework
+#    http:
+#      paths:
+#      - path: /
+#        pathType: Prefix
+#        backend:
+#          serviceName: frontend-service
+#          servicePort: 9000
+#  - host: api.sa.homework
+#    http:
+#      paths:
+#      - path: /
+#        pathType: Prefix
+#        backend:
+#          serviceName: backend-service
+#          servicePort: 9000
