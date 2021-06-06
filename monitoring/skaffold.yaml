@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2alpha4
+kind: Config
+metadata:
+  name: skaffold
+build:
+  artifacts:
+  - image: backend
+    context: backend
+    docker:
+      dockerfile: ./Dockerfile
+deploy:
+  statusCheckDeadlineSeconds: 540
+  kubectl:
+    manifests:
+    - deployment.yaml
+    - service.yaml

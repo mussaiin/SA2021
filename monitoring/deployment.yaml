@@ -17,17 +17,9 @@ spec:
         image: backend:v1
         env:
           - name: DATABASE_URI
-#            value: "postgresql+psycopg2://myuser:passwd@postgres:5432/myapp"
-            valueFrom:
-              secretKeyRef:
-                name: backend-secret
-                key: DATABASE_URI
+            value: "postgresql+psycopg2://myuser:passwd@postgres:5432/myapp"
           - name: GREETINGS
-#            value: "Aloha"
-            valueFrom:
-              configMapKeyRef:
-                name: backend-config
-                key: GREETINGS
+            value: "Aloha"
         ports:
           - name: web
             containerPort: 80
